@@ -1,6 +1,6 @@
 
 (function  main(){
-
+    // const showSize = 5;
     let travelDatabase = [];
     let item = {};
     const formElement = document.getElementById('myForm');
@@ -17,6 +17,7 @@
         if(item['dateEnd'] < item['dateStart']) [item['dateStart'],item['dateEnd']] = [item['dateEnd'],item['dateStart']];
         // console.log(item);
         addItemToTravelDatabase(item);
+        showTravelList();
         // console.log(travelDatabase);
     });
 
@@ -38,7 +39,8 @@
     }
 
     function makeHtmlElem(item) {
-        const string = `<div class="row row-cols-2 form-control-sm">
+        let string;
+        string = `<div class="row bg-success bg-gradient mb-2 form-control-sm">
                 <div class="col col-8">
                     From ${item['cityFrom']} to ${item['cityTo']}
                 </div>
@@ -60,17 +62,20 @@
                 <div class="thirdLineLine col col-12">
                     ${item['dateStart']} - ${item['dateEnd']} | ${item['amountPersons']} persons | ${item['mainTransferType']}
                 </div>
-
             </div>`;
-        // console.log(string);
+        return string;
     }
 
+    const travelDatabaseDom = document.getElementById('rightPart');
     function showTravelList() {
-        // console.log('now - element:');
-        // console.log(travelDatabase.at(0));
-
-        makeHtmlElem(travelDatabase.at(0));
-
+        let blockHtml = `<div class="col-12 h4">Travel History:</div>`;
+        let temp = travelDatabase.reduce((temp,item)=>{
+            return temp + makeHtmlElem(item);
+        },'');
+        blockHtml += temp;
+        // blockHtml += '';
+        // makeHtmlElem(travelDatabase.at(0));
+        travelDatabaseDom.innerHTML = blockHtml;
     }
 
     loadDatabaseFromLocalStorage();
