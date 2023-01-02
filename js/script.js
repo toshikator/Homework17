@@ -1,6 +1,7 @@
 (function  main(){
 
     let travelDatabase = [];
+
     const loadTravelDatabase = ()=>{
         travelDatabase = JSON.parse(localStorage.getItem('travelDatabase'));
     }
