@@ -12,33 +12,33 @@
     <div class=" col-12 col-md-10 col-lg-8 row row-col-2">
         <div class="leftPart col-sm-12 col-md-6 g-3 form-control-sm">
             <p class="col-12 h4 mb-0">New travel</p>
-            <form action="#" method="post" enctype="multipart/form-data" >
+            <form id="myForm" name="myForm" action="#" method="post" enctype="multipart/form-data" >
                 <div class="col-7 col-sm-7 col-md-10 col-lg-9 col-xl-8 col-xxl-7">
-                    <input tabindex="1" class="form-control" type="text" name="city from" id="cityFrom" placeholder="City from" required >
-                    <input tabindex="2" class="form-control" type="text" name="city to" id="cityTo" placeholder="City to" required >
+                    <input tabindex="1" class="form-control" type="text" name="cityFrom" id="cityFrom" placeholder="City from" required >
+                    <input tabindex="2" class="form-control" type="text" name="cityTo" id="cityTo" placeholder="City to" required >
                     <input tabindex="3" class="form-control text-start" type="text" name="budget" id="budget" placeholder="Budget">
                     <label for="dateStart" class="col text-start">Date start</label>
                     <input tabindex="4" class="form-control text-start" type="date" name="dateStart" id="dateStart">
                     <label for="dateEnd" class="col text-start">Date end</label>
                     <input tabindex="5" class="form-control text-start" type="date" name="dateEnd" id="dateEnd">
                     <label for="amountPersons" class="col text-start ">Persons:</label>
-                    <select tabindex="6" class="form-control text-start" id="amountPersons">
-                        <option selected value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">6</option>
-                        <option value="">>7</option>
+                    <select tabindex="6" class="form-control text-start" name="amountPersons" id="amountPersons">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value=">7">>7</option>
                     </select>
                     <label for="mainTransferType" class="col text-start">Main transfer type</label>
-                    <select tabindex="7" class="form-control text-start" id="mainTransferType">
-                        <option value="">Bus</option>
-                        <option selected value="">Private car</option>
-                        <option value="">Railway</option>
-                        <option value="">Fly</option>
-                        <option value="">Rent Car</option>
-                        <option value="">Taxi</option>
+                    <select tabindex="7" class="form-control text-start" name="mainTransferType" id="mainTransferType">
+                        <option value="bus">Bus</option>
+                        <option selected value="private car">Private car</option>
+                        <option value="railway">Railway</option>
+                        <option value="fly">Fly</option>
+                        <option value="rent car">Rent Car</option>
+                        <option value="taxi">Taxi</option>
                     </select>
                 </div>
                 <p class="pt-2">
@@ -47,7 +47,21 @@
             </form>
         </div>
         <div class="rightPart col-sm-12 col-md-6 g-3 form-control-sm">
-            right part
+
+            <div class="col-12 h4">Travel History:</div>
+            <div class="form-control-sm">
+                <div class="col col-10 border-danger">
+                    From Haifa to Jerusalem
+                </div>
+
+                <div class="col col-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heartbreak-fill" viewBox="0 0 16 16">
+                        <path d="M8.931.586 7 3l1.5 4-2 3L8 15C22.534 5.396 13.757-2.21 8.931.586ZM7.358.77 5.5 3 7 7l-1.5 3 1.815 4.537C-6.533 4.96 2.685-2.467 7.358.77Z"/>
+                    </svg>
+                </div>
+
+            </div>
+
         </div>
     </div>
 </div>
