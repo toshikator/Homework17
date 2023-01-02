@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class=" col-12 col-md-10 col-lg-8 row row-col-2">
+
+            <div class="leftPart col-sm-12 col-md-6 g-3 form-control-sm">
+                <p class="col-12 h4 mb-0">New travel</p>
+                <form action="#" method="post" enctype="multipart/form-data" >
+                    <div class="col-7 col-sm-7 col-md-10 col-lg-9 col-xl-8 col-xxl-7">
+                        <input tabindex="1" class="form-control" type="text" name="city from" id="cityFrom" placeholder="City from" required >
+                        <input tabindex="2" class="form-control" type="text" name="city to" id="cityTo" placeholder="City to" required >
+                        <input tabindex="3" class="form-control text-start" type="text" name="budget" id="budget" placeholder="Budget">
+                        <div class="col text-start">Date start</div>
+                        <input tabindex="4" class="form-control text-start" type="date" name="dateStart" id="dateStart">
+                        <div class="col text-start">Date end</div>
+                        <input tabindex="5" class="form-control text-start" type="date" name="dateEnd" id="dateEnd">
+                        <div class="col text-start ">Persons:</div>
+                        <select tabindex="6" class="form-control text-start" id="amountPersons">
+                            <option selected value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">6</option>
+                            <option value="">>7</option>
+                        </select>
+                        <div class="col text-start">Main transfer type</div>
+                        <select tabindex="7" class="form-control text-start" id="mainTransferType">
+                            <option value="">Bus</option>
+                            <option selected value="">Private car</option>
+                            <option value="">Railway</option>
+                            <option value="">Fly</option>
+                            <option value="">Rent Car</option>
+                            <option value="">Taxi</option>
+                        </select>
+                    </div>
+                    <p class="pt-2">
+                        <button tabindex="8" type="submit" class="btn btn-success form-control" id="btnSaveTravel">Save travel</button>
+                    </p>
+                </form>
+
+            </div>
+
+            <div class="rightPart col-sm-12 col-md-6 ">
+
+                right part
+
+    </div>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

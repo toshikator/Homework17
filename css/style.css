@@ -1,0 +1,14 @@
+
+*{
+    /*border: 2px crimson solid;*/
+    /*border-radius: 7px;*/
+}
+.leftPart>form>input, .leftPart{
+    border: rgb(211,205,212) solid 2px;
+}
+
+.leftPart{
+    background-color: rgb(211,211,211);
+}
+
+
