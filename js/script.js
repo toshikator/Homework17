@@ -17,6 +17,7 @@
         if(item['dateEnd'] < item['dateStart']) [item['dateStart'],item['dateEnd']] = [item['dateEnd'],item['dateStart']];
         // console.log(item);
         addItemToTravelDatabase(item);
+        navigationArray();
         showTravelList();
         // console.log(travelDatabase);
     });
@@ -37,8 +38,11 @@
 
     function addItemToTravelDatabase(item) {
     travelDatabase.push(item);
+        navigationArray();
     saveTravelDatabaseToLocalStorage();
     }
+
+    let deleteButtons = document.querySelectorAll('.itemDeleterButton');
 
     function makeHtmlElem(item) {
         let string;
@@ -81,6 +85,7 @@
         // blockHtml += '';
         // makeHtmlElem(travelDatabase.at(0));
         travelDatabaseDom.innerHTML = blockHtml;
+        navigationArray();
     }
 
 
@@ -106,16 +111,21 @@
     }
 
 
-    let deleteButtons = document.querySelectorAll('.itemDeleterButton');
-    deleteButtons.forEach(function (button){
-        button.onclick = function () {
-            console.log('LOLOLO',this.getAttribute('id'));
-            let idForDelete = this.getAttribute('id').toString();
-            idForDelete = Number(idForDelete.substring(6, idForDelete.length));
-            deleteItemFromArray(travelDatabase,idForDelete);
-            saveTravelDatabaseToLocalStorage();
-            showTravelList();
-            deleteButtons = document.querySelectorAll('.itemDeleterButton');
-        }
-    });
+    deleteButtons = document.querySelectorAll('.itemDeleterButton');
+    function navigationArray() {
+        deleteButtons = document.querySelectorAll('.itemDeleterButton');
+        deleteButtons.forEach(function (button) {
+            button.onclick = function () {
+                console.log('LOLOLO', this.getAttribute('id'));
+                let idForDelete = this.getAttribute('id').toString();
+                idForDelete = Number(idForDelete.substring(6, idForDelete.length));
+                deleteItemFromArray(travelDatabase, idForDelete);
+                saveTravelDatabaseToLocalStorage();
+                showTravelList();
+                deleteButtons = document.querySelectorAll('.itemDeleterButton');
+                navigationArray();
+            }
+        });
+    }
+    navigationArray();
 }())
